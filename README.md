@@ -1,7 +1,15 @@
-# README #
+#1. Name
+Kyohei Mizutani
 
-Starter project for VRND Performance Bounceback
+#2. Headset
+HTC Vive
 
-### What is this repository for? ###
+#3. How long it took to complete
+3 hours
 
-* You'll find the main scene at `Assets/PerformanceBounceback/Scenes/Scene0.unity`.
+#3. One thing I liked
+Good lighting and work smoothly (200+ FPS in average). 
+
+#4. One thing that was challenging about this project
+Finding best coding style.
+
