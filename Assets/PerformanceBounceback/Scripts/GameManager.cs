@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-
     public int score;
+    public Text[] scoreBoards;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void AddScore ()
+    {
+        score++;
+        foreach (Text scoreBaord in scoreBoards)
+        {
+            scoreBaord.text = "Score: " + score;
+        }
+    }
+
 }

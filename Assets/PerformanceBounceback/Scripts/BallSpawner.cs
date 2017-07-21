@@ -21,7 +21,6 @@ public class BallSpawner : MonoBehaviour {
 
     void Start()
     {
-        //Create Bullet Pool
         pooledBalls = new List<GameObject>();
         for (int i = 0; i < ballsAmount; i++)
         {
@@ -31,27 +30,20 @@ public class BallSpawner : MonoBehaviour {
         }
     }
 
-public GameObject GetPooledBall()
-{
-    ballPoolNum++;
-    if (ballPoolNum > (ballsAmount - 1))
-    {
-        ballPoolNum = 0;
-    }
-    //if we’ve run out of objects in the pool too quickly, create a new one
-    if (pooledBalls[ballPoolNum].activeInHierarchy)
-    {
-        //create a new bullet and add it to the bulletList
-        GameObject obj = Instantiate(pooledBall);
-        pooledBalls.Add(obj);
-        ballsAmount++;
-        ballPoolNum = ballsAmount - 1;
-    }
-        Debug.Log(ballPoolNum);
+	public GameObject GetPooledBall()
+	{
+	    ballPoolNum++;
+	    if (ballPoolNum > (ballsAmount - 1))
+	    {
+	        ballPoolNum = 0;
+	    }
+	    if (pooledBalls[ballPoolNum].activeInHierarchy)
+	    {
+            pooledBalls[ballPoolNum].SetActive(false);
+	    }
         return pooledBalls[ballPoolNum];
-}
+	}
    	
-	// Update is called once per frame
 	void Update () {
         cooldown -= Time.deltaTime;
         if(cooldown <= 0)
