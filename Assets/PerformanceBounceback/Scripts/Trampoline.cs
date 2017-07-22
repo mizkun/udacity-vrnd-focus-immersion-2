@@ -5,12 +5,7 @@ using UnityEngine;
 public class Trampoline : MonoBehaviour {
 
     public ParticleSystem pSystem;
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
+    public GameManager gameManager;
 
     void OnCollisionEnter(Collision col)
     {
